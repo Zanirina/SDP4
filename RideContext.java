@@ -9,15 +9,15 @@ public class RideContext {
         this.strategy = strategy;
     }
 
-    public double calculateFare(double dist, double time, boolean isPeak) {
-        if (dist < 0 || time < 0) {
-            throw new IllegalArgumentException("dist < 0 and time < 0");
+    public double calculateFare(double distance, double time, boolean isPeak) {
+        if (distance < 0 || time < 0) {
+            throw new IllegalArgumentException("distance and time should not be negative");
         }
 
-        if (isPeak == true) {
+        if (isPeak) {
             this.setStrategy(new SurgeFareStrategy());
         }
 
-        return this.strategy.calculateFare(dist, time);
+        return this.strategy.calculateFare(distance, time);
     }
 }

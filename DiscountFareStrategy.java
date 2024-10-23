@@ -2,12 +2,12 @@
 public class DiscountFareStrategy implements FareStrategy {
 
     @Override
-    public double calculateFare(double dist, double time) {
-        double perKM = 0.5;
-        double perMIN = 0.15;
-        double fare = (perKM * dist) + (perMIN * time);
+    public double calculateFare(double distance, double time) {
+        double per_km = 0.5;
+        double per_min = 0.15;
+        double all = (per_km * distance) + (per_min * time);
 
-        return Math.max(fare, 3.00);
+        return Math.max(all, 3.00);
     }
 
 }

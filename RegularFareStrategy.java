@@ -1,12 +1,12 @@
 public class RegularFareStrategy implements FareStrategy {
 
     @Override
-    public double calculateFare(double dist, double time) {
+    public double calculateFare(double distance, double time) {
         double per_km = 1.00;
         double per_min= 0.25;
-        double fare = (per_km * dist) + (per_min * time);
+        double all = (per_km * distance) + (per_min * time);
 
-        return Math.max(fare, 2.00);
+        return Math.max(all, 2.00);
     }
 
 }
